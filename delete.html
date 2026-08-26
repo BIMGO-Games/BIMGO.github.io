@@ -1,11 +1,10 @@
-```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>게임 데이터 삭제 - GAME_NAME</title>
+    <title>게임 데이터 삭제 - BIMGO!</title>
 
     <style>
         * {
@@ -28,7 +27,7 @@
         }
 
         .card {
-            background: #fff;
+            background: #ffffff;
             border-radius: 16px;
             padding: 40px 36px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
@@ -42,11 +41,12 @@
         h2 {
             margin-top: 36px;
             padding-bottom: 8px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #eeeeee;
             font-size: 21px;
         }
 
-        p, li {
+        p,
+        li {
             font-size: 15px;
         }
 
@@ -64,23 +64,24 @@
             background: #f5f5f5;
         }
 
-        .button {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 12px 18px;
-            border-radius: 8px;
-            background: #222;
-            color: #fff;
-            text-decoration: none;
+        a {
+            color: #333333;
         }
 
-        a {
-            color: #333;
+        .back {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 12px 18px;
+            border-radius: 8px;
+            background: #eeeeee;
+            color: #222222;
+            text-decoration: none;
+            font-weight: 600;
         }
 
         footer {
             margin-top: 40px;
-            color: #888;
+            color: #888888;
             font-size: 14px;
             text-align: center;
         }
@@ -95,8 +96,8 @@
         <h1>게임 데이터 삭제</h1>
 
         <p>
-            GAME_NAME은 개발자가 별도의 회원 계정 서버 또는 게임 데이터
-            서버를 운영하지 않습니다.
+            BIMGO!은 개발자가 운영하는 별도의 회원가입 시스템,
+            로그인 서버 또는 게임 데이터 서버를 사용하지 않습니다.
         </p>
 
         <p>
@@ -105,95 +106,101 @@
         </p>
 
 
-        <h2>1. 게임 데이터 삭제</h2>
+        <h2>1. 삭제 대상</h2>
 
         <p>
-            게임에서 Google Play Games Services에 로그인한 상태라면,
-            게임 설정 메뉴의 <strong>게임 데이터 삭제</strong> 기능을 통해
-            게임의 Saved Games 데이터를 삭제할 수 있습니다.
+            삭제 대상은 BIMGO!에서 Google Play Games Services의
+            Saved Games 기능을 통해 저장한 게임 진행 데이터입니다.
+        </p>
+
+        <p>
+            개발자가 별도의 서버에 저장하는 BIMGO! 사용자 계정이나
+            게임 데이터베이스는 존재하지 않습니다.
+        </p>
+
+
+        <h2>2. 게임 데이터 삭제 방법</h2>
+
+        <p>
+            BIMGO!의 게임 데이터 삭제 기능을 이용할 수 있는 경우,
+            게임 내 설정 메뉴에서 제공되는 게임 데이터 삭제 기능을
+            이용하여 Google Play Games Services에 저장된 게임 데이터를
+            삭제할 수 있습니다.
         </p>
 
         <div class="warning">
             <strong>주의:</strong>
-            게임 데이터 삭제가 완료되면 삭제된 게임 진행 데이터를
+            게임 저장 데이터를 삭제하면 삭제된 게임 진행 상황을
             복구할 수 없을 수 있습니다.
         </div>
 
 
-        <h2>2. Google 계정에 대하여</h2>
+        <h2>3. Google 계정은 삭제되지 않습니다</h2>
 
         <p>
-            GAME_NAME은 Google 계정을 생성하거나 관리하지 않습니다.
+            BIMGO!은 사용자의 Google 계정을 생성하거나 관리하지 않습니다.
         </p>
 
         <p>
-            게임에서 사용하는 Google Play Games Services 로그인은
-            사용자의 Google 계정과 Google Play Games Services를 통해
-            이루어집니다.
-        </p>
-
-        <p>
-            따라서 GAME_NAME의 게임 데이터 삭제와
-            Google 계정 자체의 삭제는 서로 다른 작업입니다.
+            BIMGO!에서 사용하는 Google Play Games Services 로그인은
+            사용자의 Google 계정을 기반으로 제공됩니다.
         </p>
 
         <div class="info">
-            Google 계정 자체를 삭제하려면 Google에서 제공하는
-            Google 계정 관리 기능을 이용해야 합니다.
+            <strong>중요:</strong>
+            이 페이지를 통한 BIMGO! 게임 데이터 삭제는
+            Google 계정 자체의 삭제를 의미하지 않습니다.
         </div>
 
-
-        <h2>3. 삭제되는 데이터</h2>
-
         <p>
-            게임의 삭제 기능을 통해 삭제 대상이 되는 데이터는
-            GAME_NAME에서 Google Play Games Services의 Saved Games에
-            저장한 게임 진행 데이터입니다.
-        </p>
-
-        <p>
-            개발자가 별도의 서버에 저장하는 사용자 계정 또는 게임
-            데이터베이스는 존재하지 않습니다.
+            Google 계정 자체를 삭제하려는 경우 Google에서 제공하는
+            Google 계정 관리 기능을 이용해야 합니다.
         </p>
 
 
         <h2>4. 광고 관련 데이터</h2>
 
         <p>
-            GAME_NAME은 보상형 광고 제공을 위해 Google Mobile Ads SDK
+            BIMGO!은 보상형 광고를 제공하기 위해 Google Mobile Ads SDK
             (AdMob)를 사용합니다.
         </p>
 
         <p>
-            AdMob 및 관련 광고 서비스에서 처리하는 데이터는 해당
-            서비스의 정책 및 설정에 따라 처리될 수 있으며,
-            게임의 Saved Games 삭제 기능이 Google의 광고 서비스에서
-            처리되는 데이터를 직접 삭제하는 기능을 의미하지는 않습니다.
+            AdMob 및 관련 Google 광고 서비스에서 처리하는 데이터는
+            해당 서비스의 정책과 사용자의 광고 및 기기 설정에 따라
+            처리될 수 있습니다.
+        </p>
+
+        <p>
+            BIMGO!의 Saved Games 데이터를 삭제하는 것은 AdMob 또는
+            Google 광고 서비스에서 처리하는 데이터를 삭제하는 것과
+            동일하지 않습니다.
         </p>
 
 
-        <h2>5. 문의</h2>
+        <h2>5. 삭제 관련 문의</h2>
 
         <p>
             게임 데이터 삭제와 관련하여 문제가 있거나 도움이 필요한 경우
-            아래 이메일로 문의해 주세요.
+            아래 이메일로 문의해 주시기 바랍니다.
         </p>
 
         <p>
-            개발자: DEVELOPER_NAME<br>
-            이메일: CONTACT_EMAIL
-        </p>
-
-
-        <p>
-            <a href="privacy.html">
-                개인정보처리방침으로 돌아가기
+            개발자: BIMGO_Dev<br>
+            회사명: BIMGO<br>
+            이메일:
+            <a href="mailto:sandotori54@gmail.com">
+                sandotori54@gmail.com
             </a>
         </p>
 
 
+        <a class="back" href="index.html">
+            BIMGO! 홈페이지로 돌아가기
+        </a>
+
         <footer>
-            © 2026 DEVELOPER_NAME. All rights reserved.
+            © 2026 BIMGO. All rights reserved.
         </footer>
 
     </div>
