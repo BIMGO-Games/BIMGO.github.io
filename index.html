@@ -6,12 +6,19 @@
     <title>BIMGO!</title>
     <meta name="description" content="BIMGO! 공식 웹사이트">
 <style>
-    @font-face {
-        font-family: "DungGeunMo";
-        src: url("assets/fonts/DungGeunMo.ttf") format("truetype");
-        font-weight: 400;
-        font-style: normal;
-    }
+   @font-face {
+    font-family: "DungGeunMo";
+    src: url("./assets/fonts/DungGeunMo.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+html,
+body,
+body * {
+    font-family: "DungGeunMo" !important;
+}
 
     * {
         box-sizing: border-box;
@@ -24,10 +31,7 @@
         color: #222;
         line-height: 1.7;
     }
-
-    body,
-body * {
-    font-family: "DungGeunMo", sans-serif !important;
+   
 }
 
     .container {
