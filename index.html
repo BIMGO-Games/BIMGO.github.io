@@ -5,113 +5,218 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIMGO!</title>
     <meta name="description" content="BIMGO! 공식 웹사이트">
-<style>
-   @font-face {
-    font-family: "DungGeunMo";
-    src: url("./assets/fonts/DungGeunMo.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
+    <style>
+        /* 1. 폰트 정의 */
+        @font-face {
+            font-family: "DungGeunMo";
+            src: url("./assets/fonts/DungGeunMo.ttf") format("truetype");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
 
-html,
-body,
-body * {
-    font-family: "DungGeunMo" !important;
-}
+        @font-face {
+            font-family: "x12y12pxMaruMinyaHangul";
+            src: url("./assets/fonts/x12y12pxMaruMinyaHangul.ttf") format("truetype");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
 
-    * {
-        box-sizing: border-box;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-        margin: 0;
-        font-family: "DungGeunMo", sans-serif;
-        background: #f5f5f5;
-        color: #222;
-        line-height: 1.7;
-    }
-   
-}
+        /* 기본 한국어/영어 폰트 */
+        body {
+            margin: 0;
+            font-family: "DungGeunMo", sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            line-height: 1.7;
+        }
 
-    .container {
-        max-width: 760px;
-        margin: 0 auto;
-        padding: 60px 24px;
-    }
+        /* ★ 일본어 선택 시 적용될 폰트 클래스 */
+        body.lang-jp,
+        body.lang-jp * {
+            font-family: "x12y12pxMaruMinyaHangul", sans-serif !important;
+        }
 
-    .card {
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 40px 32px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
 
-    h1 {
-        margin: 0 0 8px;
-        font-size: 34px;
-    }
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            position: relative;
+        }
 
-    .description {
-        margin-bottom: 32px;
-        color: #666;
-    }
+        /* 언어 선택 버튼 바 */
+        .lang-switch-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 6px;
+            margin-bottom: 24px;
+        }
 
-    .links {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
+        .lang-btn {
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 6px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #555;
+            transition: all 0.2s;
+        }
 
-    .link {
-        display: block;
-        padding: 16px 20px;
-        border-radius: 10px;
-        background: #f0f0f0;
-        color: #222;
-        text-decoration: none;
-        font-weight: 400;
-        transition: background 0.2s;
-    }
+        .lang-btn:hover {
+            background: #e2e2e2;
+        }
 
-    .link:hover {
-        background: #e4e4e4;
-    }
+        .lang-btn.active {
+            background: #222;
+            color: #fff;
+            border-color: #222;
+            font-weight: bold;
+        }
 
-    footer {
-        margin-top: 32px;
-        text-align: center;
-        color: #888;
-        font-size: 14px;
-    }
-</style>
+        h1 {
+            margin: 0 0 8px;
+            font-size: 34px;
+        }
+
+        .description {
+            margin-bottom: 32px;
+            color: #666;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link {
+            display: block;
+            padding: 16px 20px;
+            border-radius: 10px;
+            background: #f0f0f0;
+            color: #222;
+            text-decoration: none;
+            font-weight: 400;
+            transition: background 0.2s;
+        }
+
+        .link:hover {
+            background: #e4e4e4;
+        }
+
+        footer {
+            margin-top: 32px;
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
 </head>
 
 <body>
 
 <div class="container">
     <div class="card">
+        <!-- 언어 선택 버튼 영역 -->
+        <div class="lang-switch-container">
+            <button class="lang-btn" onclick="setLanguage('ko')">한국어</button>
+            <button class="lang-btn" onclick="setLanguage('en')">English</button>
+            <button class="lang-btn" onclick="setLanguage('jp')">日本語</button>
+        </div>
+
         <h1>BIMGO!</h1>
 
-        <p class="description">
+        <p class="description" id="txt-desc">
             BIMGO! 공식 웹사이트입니다.
         </p>
 
         <div class="links">
-            <a class="link" href="privacy.html">
+            <a class="link" id="link-privacy" href="privacy.html">
                 개인정보처리방침
             </a>
 
-            <a class="link" href="delete.html">
+            <a class="link" id="link-delete" href="delete.html">
                 게임 데이터 삭제
             </a>
         </div>
     </div>
 
-    <footer>
+    <footer id="txt-footer">
         개발자: BIMGO_Dev · © 2026 BIMGO
     </footer>
 </div>
+
+<script>
+    // 3개 국어 텍스트 데이터베이스
+    const i18nData = {
+        ko: {
+            desc: "BIMGO! 공식 웹사이트입니다.",
+            privacy: "개인정보처리방침",
+            delete: "게임 데이터 삭제",
+            footer: "개발자: BIMGO_Dev · © 2026 BIMGO"
+        },
+        en: {
+            desc: "Welcome to the official website of BIMGO!",
+            privacy: "Privacy Policy",
+            delete: "Delete Game Data",
+            footer: "Developer: BIMGO_Dev · © 2026 BIMGO"
+        },
+        jp: {
+            desc: "BIMGO! 公式ウェブサイトです。",
+            privacy: "プライバシーポリシー",
+            delete: "ゲームデータの削除",
+            footer: "開発者: BIMGO_Dev · © 2026 BIMGO"
+        }
+    };
+
+    function setLanguage(lang) {
+        if (!i18nData[lang]) lang = 'ko';
+
+        // 1. 텍스트 교체
+        document.getElementById("txt-desc").textContent = i18nData[lang].desc;
+        document.getElementById("link-privacy").textContent = i18nData[lang].privacy;
+        document.getElementById("link-delete").textContent = i18nData[lang].delete;
+        document.getElementById("txt-footer").textContent = i18nData[lang].footer;
+
+        // 2. 폰트 클래스 교체 (일본어일 때만 x12y12pxMaruMinyaHangul 적용)
+        if (lang === 'jp') {
+            document.body.classList.add('lang-jp');
+        } else {
+            document.body.classList.remove('lang-jp');
+        }
+
+        // 3. 버튼 활성화 UI 변경
+        const buttons = document.querySelectorAll('.lang-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        if (lang === 'ko') buttons[0].classList.add('active');
+        else if (lang === 'en') buttons[1].classList.add('active');
+        else if (lang === 'jp') buttons[2].classList.add('active');
+
+        // 4. 언어 설정 브라우저에 저장
+        localStorage.setItem('bimgo_lang', lang);
+        document.documentElement.lang = lang;
+    }
+
+    // 페이지 진입 시 저장된 언어 불러오기 (기본값: 한국어)
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('bimgo_lang') || 'ko';
+        setLanguage(savedLang);
+    });
+</script>
 
 </body>
 </html>
