@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게임 데이터 삭제 - BIMGO!</title>
+    <title>게임 데이터 생성 & 삭제 안내 - BIMGO!</title>
     <style>
         @font-face {
             font-family: "DungGeunMo";
@@ -96,6 +96,31 @@
             font-size: 15px;
         }
 
+        /* 가이드 스텝 및 이미지 스타일 */
+        .step-box {
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .step-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 14px;
+        }
+
+        .step-desc {
+            font-size: 16px;
+            color: #333;
+            margin: 0;
+            font-weight: 500;
+        }
+
         .warning {
             padding: 18px;
             margin: 24px 0;
@@ -144,41 +169,77 @@
             <button class="lang-btn" onclick="setLanguage('jp')">日本語</button>
         </div>
 
+        <!-- 한국어 본문 -->
         <div id="content-ko">
-            <h1>게임 데이터 삭제</h1>
+            <h1>게임 데이터 생성 & 삭제 안내</h1>
             <p>BIMGO!은 개발자가 운영하는 별도의 회원가입 시스템, 로그인 서버 또는 게임 데이터 서버를 사용하지 않습니다.</p>
-            <p>Google Play Games Services를 이용하는 경우 게임 진행 데이터가 Google Play Games Services의 Saved Games 기능에 저장될 수 있습니다.</p>
+            <p>Google Play Games Services를 이용하여 사용자의 안전한 클라우드 공간(Saved Games)에 게임 진행 데이터를 생성 및 저장합니다.</p>
 
-            <h2>1. 삭제 대상</h2>
+            <h2>1. 게임 데이터 생성 및 연동 방법</h2>
+            
+            <div class="step-box">
+                <img src="./assets/images/step1.png" alt="1단계 이미지">
+                <p class="step-desc">1. 게임 메인 화면에서 설정 버튼을 눌러 설정 패널을 열어주세요.</p>
+            </div>
+
+            <div class="step-box">
+                <img src="./assets/images/step2.png" alt="2단계 이미지">
+                <p class="step-desc">2. 구글 계정 연동 버튼을 눌러 구글 플레이 계정 연동을 먼저 진행해 주세요.</p>
+            </div>
+
+            <div class="step-box">
+                <img src="./assets/images/step3.png" alt="3단계 이미지">
+                <p class="step-desc">3. 계정 연동이 완료되었다면, 저장/로드 버튼을 눌러 클라우드에 게임 데이터를 안전하게 보관하거나 불러올 수 있습니다.</p>
+            </div>
+
+            <h2>2. 삭제 대상</h2>
             <p>삭제 대상은 BIMGO!에서 Google Play Games Services의 Saved Games 기능을 통해 저장한 게임 진행 데이터입니다.</p>
 
-            <h2>2. 게임 데이터 삭제 방법</h2>
+            <h2>3. 게임 데이터 삭제 방법</h2>
             <p>Google에서 제공하는 공식 기능을 통해 BIMGO!의 Play 게임즈 데이터를 삭제할 수 있습니다.</p>
             <p>아래 Google 공식 안내 페이지에서 '개별 게임 데이터 삭제' 방법을 확인해 주세요.</p>
             <a class="back" href="https://support.google.com/googleplay/answer/9130646?hl=ko" target="_blank" rel="noopener noreferrer">Google 공식 게임 데이터 삭제 안내</a>
 
             <div class="warning">
-                <strong>주의:</strong> 게임 데이터를 삭제하면 게임 진행 상황이나 업적 등이 삭제되며 복구할 수 없습니다.
+                <strong>주의:</strong> 게임 데이터를 삭제하면 게임 진행 상황이나 업적 등이 완전히 삭제되며 복구할 수 없습니다.
             </div>
 
-            <h2>3. Google 계정은 삭제되지 않습니다</h2>
+            <h2>4. Google 계정은 삭제되지 않습니다</h2>
             <div class="info">
                 <strong>중요:</strong> Play 게임즈 데이터 삭제는 저장된 게임 데이터를 대상으로 하며, Google 계정 자체를 삭제하는 것은 아닙니다.
             </div>
 
-            <h2>4. 삭제 관련 문의</h2>
+            <h2>5. 삭제 관련 문의</h2>
             <p>개발자: BIMGO_Dev<br>회사명: BIMGO<br>이메일: <a href="mailto:sandotori54@gmail.com">sandotori54@gmail.com</a></p>
         </div>
 
+        <!-- 영어 본문 -->
         <div id="content-en" style="display:none;">
-            <h1>Delete Game Data</h1>
+            <h1>Game Data Creation & Deletion Guide</h1>
             <p>BIMGO! does not use a separate account system, custom login server, or private game database.</p>
-            <p>If you use Google Play Games Services, your game progress may be stored via Google Play Games Saved Games.</p>
+            <p>Game progress is securely created and backed up using Google Play Games Services (Saved Games).</p>
 
-            <h2>1. Data Subject to Deletion</h2>
+            <h2>1. How to Create and Link Game Data</h2>
+
+            <div class="step-box">
+                <img src="./assets/images/step1.png" alt="Step 1 Image">
+                <p class="step-desc">1. Tap the Settings button on the main screen to open the options panel.</p>
+            </div>
+
+            <div class="step-box">
+                <img src="./assets/images/step2.png" alt="Step 2 Image">
+                <p class="step-desc">2. Tap the Google Play link button to sign in and link your Google account first.</p>
+            </div>
+
+            <div class="step-box">
+                <img src="./assets/images/step3.png" alt="Step 3 Image">
+                <p class="step-desc">3. Once linked, tap the Save/Load buttons to upload or retrieve your cloud save data.</p>
+            </div>
+
+            <h2>2. Data Subject to Deletion</h2>
             <p>The data subject to deletion is the game progress saved through Google Play Games Services Saved Games.</p>
 
-            <h2>2. How to Delete Game Data</h2>
+            <h2>3. How to Delete Game Data</h2>
             <p>You can delete BIMGO! game data using the official management tools provided by Google Play Games.</p>
             <p>Please check the official Google support page below for instructions on deleting individual game data.</p>
             <a class="back" href="https://support.google.com/googleplay/answer/9130646?hl=ko" target="_blank" rel="noopener noreferrer">Google Play Games Data Deletion Guide</a>
@@ -187,24 +248,42 @@
                 <strong>Warning:</strong> Deleting game data will permanently erase your progress and achievements.
             </div>
 
-            <h2>3. Google Account is Not Deleted</h2>
+            <h2>4. Google Account is Not Deleted</h2>
             <div class="info">
                 <strong>Important:</strong> Deleting Play Games data only removes the saved game progress and does NOT delete your Google account.
             </div>
 
-            <h2>4. Contact Us</h2>
+            <h2>5. Contact Us</h2>
             <p>Developer: BIMGO_Dev<br>Company: BIMGO<br>Email: <a href="mailto:sandotori54@gmail.com">sandotori54@gmail.com</a></p>
         </div>
 
+        <!-- 일본어 본문 -->
         <div id="content-jp" style="display:none;">
-            <h1>ゲームデータの削除</h1>
+            <h1>ゲームデータ作成・削除のご案内</h1>
             <p>BIMGO!は独自の会員登録システム、ログインサーバー、ゲームデータサーバーを使用していません。</p>
-            <p>Google Play Games Servicesを利用している場合、ゲーム進行データはGoogleのSaved Games機能に保存されます。</p>
+            <p>Google Play Games Servicesを利用して、安全なクラウド領域（Saved Games）にゲームデータを保存・同期します。</p>
 
-            <h2>1. 削除対象のデータ</h2>
+            <h2>1. ゲームデータの作成・同期手順</h2>
+
+            <div class="step-box">
+                <img src="./assets/images/step1.png" alt="ステップ 1 画像">
+                <p class="step-desc">1. メイン画面の設定ボタンを押して、設定パネルを開いてください。</p>
+            </div>
+
+            <div class="step-box">
+                <img src="./assets/images/step2.png" alt="ステップ 2 画像">
+                <p class="step-desc">2. Googleアカウント連携ボタンを押し、Playゲームアカウントの連携を完了させてください。</p>
+            </div>
+
+            <div class="step-box">
+                <img src="./assets/images/step3.png" alt="ステップ 3 画像">
+                <p class="step-desc">3. 連携完了後、保存／ロードボタンを押すことで、クラウドへのセーブデータ保存および復元が可能です。</p>
+            </div>
+
+            <h2>2. 削除対象のデータ</h2>
             <p>削除対象はGoogle Play Games Servicesを通じて保存されたBIMGO!のセーブデータです。</p>
 
-            <h2>2. データ削除の手順</h2>
+            <h2>3. データ削除の手順</h2>
             <p>Googleが提供する公式のデータ管理機能からBIMGO!のゲームデータを直接削除できます。</p>
             <p>下記のGoogle公式案内ページより「個別のゲームデータの削除」手順をご確認ください。</p>
             <a class="back" href="https://support.google.com/googleplay/answer/9130646?hl=ko" target="_blank" rel="noopener noreferrer">Google公式 ゲームデータ削除案内</a>
@@ -213,12 +292,12 @@
                 <strong>注意:</strong> ゲームデータを削除すると、ゲームの進行状況や実績が完全に削除され復元できなくなります。
             </div>
 
-            <h2>3. Googleアカウント自体は削除されません</h2>
+            <h2>4. Googleアカウント自体は削除されません</h2>
             <div class="info">
                 <strong>重要:</strong> ここでの削除はPlayゲームに保存されたゲームデータのみが対象であり、Googleアカウント自体が削除されることはありません。
             </div>
 
-            <h2>4. お問い合わせ</h2>
+            <h2>5. お問い合わせ</h2>
             <p>開発者: BIMGO_Dev<br>会社名: BIMGO<br>メール: <a href="mailto:sandotori54@gmail.com">sandotori54@gmail.com</a></p>
         </div>
 
@@ -249,13 +328,13 @@
 
         if (lang === 'jp') {
             document.body.classList.add('lang-jp');
-            document.title = "ゲームデータの削除 - BIMGO!";
+            document.title = "ゲームデータ作成・削除のご案内 - BIMGO!";
         } else if (lang === 'en') {
             document.body.classList.remove('lang-jp');
-            document.title = "Delete Game Data - BIMGO!";
+            document.title = "Game Data Creation & Deletion Guide - BIMGO!";
         } else {
             document.body.classList.remove('lang-jp');
-            document.title = "게임 데이터 삭제 - BIMGO!";
+            document.title = "게임 데이터 생성 & 삭제 안내 - BIMGO!";
         }
 
         const buttons = document.querySelectorAll('.lang-btn');
