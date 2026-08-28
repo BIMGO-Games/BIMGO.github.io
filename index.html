@@ -6,7 +6,6 @@
     <title>BIMGO!</title>
     <meta name="description" content="BIMGO! 공식 웹사이트">
     <style>
-        /* 1. 폰트 정의 */
         @font-face {
             font-family: "DungGeunMo";
             src: url("./assets/fonts/DungGeunMo.ttf") format("truetype");
@@ -27,7 +26,6 @@
             box-sizing: border-box;
         }
 
-        /* 기본 한국어/영어 폰트 */
         body {
             margin: 0;
             font-family: "DungGeunMo", sans-serif;
@@ -36,7 +34,6 @@
             line-height: 1.7;
         }
 
-        /* ★ 일본어 선택 시 적용될 폰트 클래스 */
         body.lang-jp,
         body.lang-jp * {
             font-family: "x12y12pxMaruMinyaHangul", sans-serif !important;
@@ -56,7 +53,6 @@
             position: relative;
         }
 
-        /* 언어 선택 버튼 바 */
         .lang-switch-container {
             display: flex;
             justify-content: flex-end;
@@ -130,7 +126,6 @@
 
 <div class="container">
     <div class="card">
-        <!-- 언어 선택 버튼 영역 -->
         <div class="lang-switch-container">
             <button class="lang-btn" onclick="setLanguage('ko')">한국어</button>
             <button class="lang-btn" onclick="setLanguage('en')">English</button>
@@ -160,7 +155,6 @@
 </div>
 
 <script>
-    // 3개 국어 텍스트 데이터베이스
     const i18nData = {
         ko: {
             desc: "BIMGO! 공식 웹사이트입니다.",
@@ -185,20 +179,21 @@
     function setLanguage(lang) {
         if (!i18nData[lang]) lang = 'ko';
 
-        // 1. 텍스트 교체
         document.getElementById("txt-desc").textContent = i18nData[lang].desc;
         document.getElementById("link-privacy").textContent = i18nData[lang].privacy;
         document.getElementById("link-delete").textContent = i18nData[lang].delete;
         document.getElementById("txt-footer").textContent = i18nData[lang].footer;
 
-        // 2. 폰트 클래스 교체 (일본어일 때만 x12y12pxMaruMinyaHangul 적용)
+        // 링크 이동 시 언어 파라미터 유지
+        document.getElementById("link-privacy").href = `privacy.html?lang=${lang}`;
+        document.getElementById("link-delete").href = `delete.html?lang=${lang}`;
+
         if (lang === 'jp') {
             document.body.classList.add('lang-jp');
         } else {
             document.body.classList.remove('lang-jp');
         }
 
-        // 3. 버튼 활성화 UI 변경
         const buttons = document.querySelectorAll('.lang-btn');
         buttons.forEach(btn => btn.classList.remove('active'));
 
@@ -206,14 +201,13 @@
         else if (lang === 'en') buttons[1].classList.add('active');
         else if (lang === 'jp') buttons[2].classList.add('active');
 
-        // 4. 언어 설정 브라우저에 저장
         localStorage.setItem('bimgo_lang', lang);
         document.documentElement.lang = lang;
     }
 
-    // 페이지 진입 시 저장된 언어 불러오기 (기본값: 한국어)
     window.addEventListener('DOMContentLoaded', () => {
-        const savedLang = localStorage.getItem('bimgo_lang') || 'ko';
+        const urlParams = new URLSearchParams(window.location.search);
+        const savedLang = urlParams.get('lang') || localStorage.getItem('bimgo_lang') || 'ko';
         setLanguage(savedLang);
     });
 </script>
