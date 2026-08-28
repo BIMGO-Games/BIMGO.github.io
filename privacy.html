@@ -3,29 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>개인정보처리방침 - BIMGO!</title>
-
     <style>
-    @font-face {
-        font-family: "DungGeunMo";
-        src: url("./assets/fonts/DungGeunMo.ttf") format("truetype");
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-    }
+        @font-face {
+            font-family: "DungGeunMo";
+            src: url("./assets/fonts/DungGeunMo.ttf") format("truetype");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
 
-    * {
-        box-sizing: border-box;
-    }
+        @font-face {
+            font-family: "x12y12pxMaruMinyaHangul";
+            src: url("./assets/fonts/x12y12pxMaruMinyaHangul.ttf") format("truetype");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
 
-    body {
-        margin: 0;
-        font-family: "DungGeunMo", sans-serif;
-        background: #f5f5f5;
-        color: #222;
-        line-height: 1.7;
-    }
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "DungGeunMo", sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        body.lang-jp,
+        body.lang-jp * {
+            font-family: "x12y12pxMaruMinyaHangul", sans-serif !important;
+        }
 
         .container {
             max-width: 820px;
@@ -40,6 +51,35 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
 
+        .lang-switch-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 6px;
+            margin-bottom: 24px;
+        }
+
+        .lang-btn {
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 6px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #555;
+            transition: all 0.2s;
+        }
+
+        .lang-btn:hover {
+            background: #e2e2e2;
+        }
+
+        .lang-btn.active {
+            background: #222;
+            color: #fff;
+            border-color: #222;
+            font-weight: bold;
+        }
+
         h1 {
             margin-top: 0;
             font-size: 30px;
@@ -52,8 +92,7 @@
             font-size: 21px;
         }
 
-        p,
-        li {
+        p, li {
             font-size: 15px;
         }
 
@@ -73,6 +112,17 @@
             color: #333333;
         }
 
+        .back {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 12px 18px;
+            border-radius: 8px;
+            background: #eeeeee;
+            color: #222222;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
         footer {
             margin-top: 40px;
             color: #888888;
@@ -86,294 +136,170 @@
 
 <div class="container">
     <div class="card">
+        <div class="lang-switch-container">
+            <button class="lang-btn" onclick="setLanguage('ko')">한국어</button>
+            <button class="lang-btn" onclick="setLanguage('en')">English</button>
+            <button class="lang-btn" onclick="setLanguage('jp')">日本語</button>
+        </div>
+
+        <div id="content-ko">
+            <h1>개인정보처리방침</h1>
+            <p class="date">시행일: 2026년 8월 26일</p>
+            <p>BIMGO_Dev(이하 "개발자")는 모바일 게임 <strong>BIMGO!</strong>(이하 "게임")을 이용하는 사용자의 개인정보 및 사용자 데이터를 중요하게 생각합니다.</p>
+            <p>본 개인정보처리방침은 게임에서 사용하는 Google Play Games Services 및 Google Mobile Ads SDK (AdMob)와 관련하여 사용자 데이터가 어떻게 처리되는지 설명합니다.</p>
 
-        <h1>개인정보처리방침</h1>
-
-        <p class="date">
-            시행일: 2026년 8월 26일
-        </p>
-
-        <p>
-            BIMGO_Dev(이하 "개발자")는 모바일 게임
-            <strong>BIMGO!</strong>(이하 "게임")을 이용하는 사용자의
-            개인정보 및 사용자 데이터를 중요하게 생각합니다.
-        </p>
-
-        <p>
-            본 개인정보처리방침은 게임에서 사용하는
-            Google Play Games Services 및 Google Mobile Ads SDK
-            (AdMob)와 관련하여 사용자 데이터가 어떻게 처리되는지
-            설명합니다.
-        </p>
+            <h2>1. 개인정보처리방침의 적용 범위</h2>
+            <p>본 개인정보처리방침은 개발자가 제공하는 BIMGO! 모바일 게임에 적용됩니다. 게임은 개발자가 직접 운영하는 별도의 회원가입 시스템, 자체 로그인 서버, 게임 데이터 서버 또는 사용자 데이터베이스를 운영하지 않습니다.</p>
 
+            <h2>2. Google Play Games Services</h2>
+            <p>게임은 게임 로그인 및 게임 저장 기능을 제공하기 위해 Google Play Games Services(GPGS)를 사용합니다. 사용자는 Google 계정을 이용하여 로그인할 수 있으며 개발자는 사용자의 계정 비밀번호를 수집하거나 저장하지 않습니다.</p>
 
-        <h2>1. 개인정보처리방침의 적용 범위</h2>
-
-        <p>
-            본 개인정보처리방침은 개발자가 제공하는
-            BIMGO! 모바일 게임에 적용됩니다.
-        </p>
-
-        <p>
-            게임은 개발자가 직접 운영하는 별도의 회원가입 시스템,
-            자체 로그인 서버, 게임 데이터 서버 또는 사용자 데이터베이스를
-            운영하지 않습니다.
-        </p>
+            <h2>3. Google Play Games Saved Games</h2>
+            <p>게임은 사용자의 게임 진행 상황을 저장하고 복원하기 위해 Google Play Games Services의 Saved Games 기능을 사용할 수 있습니다. 개발자는 이러한 게임 저장 데이터를 별도의 자체 서버에 저장하지 않습니다.</p>
 
+            <h2>4. 광고 서비스 - Google AdMob</h2>
+            <p>게임은 사용자에게 보상형 광고를 제공하기 위해 Google Mobile Ads SDK(AdMob)를 사용합니다. 광고 제공, 성과 측정, 사기 방지 목적으로 기기 식별자 등이 처리될 수 있습니다.</p>
 
-        <h2>2. Google Play Games Services</h2>
+            <h2>5. 게임 분석 및 자체 데이터 수집</h2>
+            <p>개발자는 게임 이용 분석을 목적으로 별도의 분석 서비스를 직접 사용하지 않습니다.</p>
 
-        <p>
-            게임은 게임 로그인 및 게임 저장 기능을 제공하기 위해
-            Google Play Games Services(GPGS)를 사용합니다.
-        </p>
-
-        <p>
-            사용자는 Google 계정을 이용하여 Google Play Games Services에
-            로그인할 수 있습니다.
-        </p>
+            <h2>6. 제3자 서비스</h2>
+            <ul>
+                <li>Google Play Games Services</li>
+                <li>Google Mobile Ads SDK (AdMob)</li>
+            </ul>
 
-        <p>
-            Google Play Games Services를 이용하는 과정에서 Google이
-            제공하는 플레이어 관련 정보가 게임 기능을 위해 처리될 수 있습니다.
-        </p>
+            <h2>7. 게임 데이터 삭제</h2>
+            <p>BIMGO!에서 Google Play Games Services를 통해 저장된 게임 진행 데이터는 Google에서 제공하는 Play 게임즈의 데이터 관리 기능을 통해 삭제할 수 있습니다.</p>
+            <p><a href="https://support.google.com/googleplay/answer/9130646?hl=ko" target="_blank" rel="noopener noreferrer">Google 공식 - Play 게임즈 데이터 삭제 안내</a></p>
 
-        <p>
-            개발자는 사용자의 Google 계정 비밀번호를 수집하거나 저장하지
-            않습니다.
-        </p>
+            <h2>8. 문의</h2>
+            <p>개발자: BIMGO_Dev<br>회사명: BIMGO<br>이메일: <a href="mailto:sandotori54@gmail.com">sandotori54@gmail.com</a></p>
+        </div>
 
-        <p>
-            Google Play Games Services를 통해 처리되는 정보에는
-            Google Play Games Services에서 제공하는 플레이어 정보 및
-            서비스 이용에 필요한 정보가 포함될 수 있으며,
-            해당 정보의 처리에는 Google의 개인정보처리방침 및
-            관련 서비스 약관이 적용될 수 있습니다.
-        </p>
+        <div id="content-en" style="display:none;">
+            <h1>Privacy Policy</h1>
+            <p class="date">Effective Date: August 26, 2026</p>
+            <p>BIMGO_Dev ("Developer") values the privacy and user data of players using the mobile game <strong>BIMGO!</strong> ("Game").</p>
+            <p>This Privacy Policy explains how user data is handled in connection with Google Play Games Services and Google Mobile Ads SDK (AdMob).</p>
 
+            <h2>1. Scope of Policy</h2>
+            <p>This policy applies to the mobile game BIMGO!. The developer does not operate separate membership systems, custom login servers, or private user databases.</p>
 
-        <h2>3. Google Play Games Saved Games</h2>
+            <h2>2. Google Play Games Services</h2>
+            <p>The Game uses Google Play Games Services (GPGS) for authentication and cloud saves. The developer never collects or stores your Google account password.</p>
 
-        <p>
-            게임은 사용자의 게임 진행 상황을 저장하고 복원하기 위해
-            Google Play Games Services의 Saved Games 기능을 사용할 수 있습니다.
-        </p>
+            <h2>3. Google Play Games Saved Games</h2>
+            <p>The Game uses Google Play Games Saved Games to backup and restore your game progress. Game saves are stored securely on Google's cloud infrastructure.</p>
 
-        <p>
-            Saved Games에는 게임 진행 상황 및 게임을 계속하기 위해
-            필요한 게임 저장 데이터가 포함될 수 있습니다.
-        </p>
+            <h2>4. Advertising - Google AdMob</h2>
+            <p>The Game utilizes Google Mobile Ads SDK (AdMob) to display rewarded ads. Device identifiers may be processed by Google for ad delivery, fraud prevention, and performance metrics.</p>
 
-        <p>
-            개발자는 이러한 게임 저장 데이터를 별도의 자체 게임 서버나
-            데이터베이스에 저장하지 않습니다.
-        </p>
+            <h2>5. Analytics & Direct Data Collection</h2>
+            <p>The developer does not directly implement external analytics tools (such as Unity Analytics or Firebase Analytics).</p>
 
-        <p>
-            Saved Games의 저장 및 처리는 Google Play Games Services의
-            시스템을 통해 이루어집니다.
-        </p>
+            <h2>6. Third-Party Services</h2>
+            <ul>
+                <li>Google Play Games Services</li>
+                <li>Google Mobile Ads SDK (AdMob)</li>
+            </ul>
 
+            <h2>7. Data Deletion</h2>
+            <p>Saved game data stored via Google Play Games Services can be deleted directly through Google Play Games account settings.</p>
+            <p><a href="https://support.google.com/googleplay/answer/9130646?hl=ko" target="_blank" rel="noopener noreferrer">Google Support - Delete Play Games Data</a></p>
 
-        <h2>4. 광고 서비스 - Google AdMob</h2>
+            <h2>8. Contact Us</h2>
+            <p>Developer: BIMGO_Dev<br>Company: BIMGO<br>Email: <a href="mailto:sandotori54@gmail.com">sandotori54@gmail.com</a></p>
+        </div>
 
-        <p>
-            게임은 사용자에게 보상형 광고를 제공하기 위해
-            Google Mobile Ads SDK(AdMob)를 사용합니다.
-        </p>
+        <div id="content-jp" style="display:none;">
+            <h1>プライバシーポリシー</h1>
+            <p class="date">施行日: 2026年8月26日</p>
+            <p>BIMGO_Dev（以下「開発者」）は、モバイルゲーム<strong>BIMGO!</strong>（以下「ゲーム」）をご利用いただくユーザーの個人情報およびデータを重要視しています。</p>
+            <p>本プライバシーポリシーでは、Google Play Games ServicesおよびGoogle Mobile Ads SDK（AdMob）に関連するユーザーデータの取り扱いについて説明します。</p>
 
-        <p>
-            AdMob 및 Google Mobile Ads SDK는 광고 제공, 광고 성과 측정,
-            사기 방지 및 서비스 운영 등의 목적으로 IP 주소,
-            광고 식별자 또는 앱 세트 ID와 같은 기기 및 계정 식별자,
-            앱 상호작용 정보 및 진단 정보 등을 처리할 수 있습니다.
-        </p>
+            <h2>1. 適用範囲</h2>
+            <p>本ポリシーはBIMGO!に適用されます。開発者は独自の会員登録システム、ログインサーバー、ユーザーデータベースを一切運営していません。</p>
 
-        <p>
-            실제로 처리되는 데이터의 종류와 처리 방법은 사용 중인
-            Google Mobile Ads SDK의 버전, 광고 설정 및 사용자의
-            기기 설정 등에 따라 달라질 수 있습니다.
-        </p>
+            <h2>2. Google Play Games Services</h2>
+            <p>ゲームはログインおよびセーブデータ保存のためにGoogle Play Games Services（GPGS）を使用します。開発者がユーザーのパスワードを収集・保管することはありません。</p>
 
-        <p>
-            Google Mobile Ads SDK를 통해 처리되는 데이터에 관한 자세한
-            내용은 Google의 관련 개인정보 보호 및 데이터 공개 정책을
-            참고하시기 바랍니다.
-        </p>
-
-
-        <h2>5. 게임 분석 및 자체 데이터 수집</h2>
-
-        <p>
-            개발자는 게임 이용 분석을 목적으로 Unity Analytics,
-            Firebase Analytics 또는 이와 유사한 별도의 분석 서비스를
-            직접 사용하지 않습니다.
-        </p>
-
-        <p>
-            다만 게임에서 사용하는 제3자 SDK(예: Google Mobile Ads SDK)가
-            해당 서비스의 운영 및 광고 제공 등을 위해 데이터를 처리할 수
-            있습니다.
-        </p>
-
-
-        <h2>6. 개인정보 및 사용자 데이터의 이용 목적</h2>
-
-        <p>
-            게임에서 처리되는 데이터는 다음과 같은 목적으로 사용될 수 있습니다.
-        </p>
-
-        <ul>
-            <li>Google Play Games Services 로그인 및 게임 기능 제공</li>
-            <li>게임 진행 데이터의 저장 및 복원</li>
-            <li>보상형 광고 제공</li>
-            <li>광고 서비스 운영 및 사기 방지</li>
-            <li>게임 및 관련 서비스의 안정적인 운영</li>
-        </ul>
+            <h2>3. Google Play Games Saved Games</h2>
+            <p>ゲーム進行状況の保存および復元のためにGoogle Play GamesのSaved Games機能を利用します。セーブデータはGoogleのシステム上で安全に管理されます。</p>
 
-
-        <h2>7. 제3자 서비스</h2>
+            <h2>4. 広告サービス - Google AdMob</h2>
+            <p>リワード広告を提供するためにGoogle Mobile Ads SDK（AdMob）を使用しています。広告配信や不正防止を目的として端末識別子等が処理される場合があります。</p>
 
-        <p>
-            게임은 다음과 같은 제3자 서비스를 사용합니다.
-        </p>
-
-        <ul>
-            <li>Google Play Games Services</li>
-            <li>Google Mobile Ads SDK (AdMob)</li>
-        </ul>
+            <h2>5. 分析およびデータ収集</h2>
+            <p>開発者が独自の分析ツール等を使用して利用データを直接収集することはありません。</p>
 
-        <p>
-            이러한 제3자 서비스가 데이터를 처리하는 경우 해당 서비스
-            제공자의 개인정보처리방침 및 관련 정책이 적용될 수 있습니다.
-        </p>
+            <h2>6. 第三者サービス</h2>
+            <ul>
+                <li>Google Play Games Services</li>
+                <li>Google Mobile Ads SDK (AdMob)</li>
+            </ul>
 
+            <h2>7. ゲームデータの削除</h2>
+            <p>Google Play Games Servicesを通じて保存されたデータは、Googleの公式設定から削除することができます。</p>
+            <p><a href="https://support.google.com/googleplay/answer/9130646?hl=ko" target="_blank" rel="noopener noreferrer">Google公式 - Play ゲーム データの削除手順</a></p>
 
-        <h2>8. 개인정보의 보관 및 저장</h2>
+            <h2>8. お問い合わせ</h2>
+            <p>開発者: BIMGO_Dev<br>会社名: BIMGO<br>メール: <a href="mailto:sandotori54@gmail.com">sandotori54@gmail.com</a></p>
+        </div>
 
-        <p>
-            개발자는 별도의 게임 서버 또는 사용자 데이터베이스를
-            운영하지 않습니다.
-        </p>
-
-        <p>
-            게임 저장 데이터는 Google Play Games Services의
-            Saved Games 기능을 통해 저장될 수 있습니다.
-        </p>
-
-        <p>
-            제3자 서비스가 자체적으로 보관하는 데이터의 보관 기간과
-            처리 방법은 해당 서비스 제공자의 정책에 따릅니다.
-        </p>
-
-
-        <h2>9. 게임 데이터 삭제</h2>
-
-<p>
-    BIMGO!에는 개발자가 운영하는 별도의 사용자 계정 시스템이나
-    게임 데이터 서버가 존재하지 않습니다.
-</p>
-
-<p>
-    BIMGO!에서 Google Play Games Services의 Saved Games 기능을 통해
-    저장된 게임 진행 데이터는 Google에서 제공하는 Play 게임즈의
-    데이터 관리 기능을 통해 삭제할 수 있습니다.
-</p>
-
-<p>
-    게임 데이터 삭제 방법에 대한 자세한 내용은 아래 Google 공식
-    안내 페이지에서 확인할 수 있습니다.
-</p>
-
-<p>
-    <a href="https://support.google.com/googleplay/answer/9130646?hl=ko"
-       target="_blank"
-       rel="noopener noreferrer">
-        Google 공식 - Play 게임즈 데이터 삭제 안내
-    </a>
-</p>
-
-<div class="notice">
-    <strong>중요:</strong>
-    Play 게임즈 데이터 삭제는 Google Play Games Services에 저장된
-    게임 데이터를 삭제하는 것이며, Google 계정 자체를 삭제하는 것은 아닙니다.
-</div>
-
-<p>
-    BIMGO!의 게임 데이터 삭제와 관련하여 추가적인 안내가 필요한 경우
-    아래의 게임 데이터 삭제 안내 페이지에 확인할 수 있습니다.
-</p>
-
-<p>
-    <a href="delete.html">
-        BIMGO! 게임 데이터 삭제 안내
-    </a>
-</p>
-
-
-        <h2>10. 데이터 보안</h2>
-
-        <p>
-            개발자는 게임에서 직접 처리하는 사용자 데이터를 최소화하기
-            위해 노력하며, 게임에서 사용하는 외부 서비스의 보안 및
-            개인정보 보호 정책을 준수합니다.
-        </p>
-
-        <p>
-            Google Play Games Services 및 Google Mobile Ads SDK를 통해
-            전송되는 데이터의 보안 및 처리 방식은 각 서비스 제공자의
-            정책에 따릅니다.
-        </p>
-
-
-        <h2>11. 아동 및 청소년의 개인정보</h2>
-
-        <p>
-            게임은 Google Play Console에 등록된 대상 연령 및
-            관련 Google Play 정책에 따라 운영됩니다.
-        </p>
-
-        <p>
-            아동을 대상으로 하는 경우에는 관련 법령 및 Google Play의
-            아동 관련 정책에 따라 필요한 조치를 적용합니다.
-        </p>
-
-
-        <h2>12. 개인정보처리방침의 변경</h2>
-
-        <p>
-            게임의 기능, 사용 서비스 또는 관련 법령의 변경에 따라
-            본 개인정보처리방침이 변경될 수 있습니다.
-        </p>
-
-        <p>
-            변경된 개인정보처리방침은 본 페이지에 게시합니다.
-        </p>
-
-
-        <h2>13. 문의</h2>
-
-        <p>
-            개인정보 및 사용자 데이터 처리와 관련하여 문의사항이 있는 경우
-            아래 연락처로 문의해 주시기 바랍니다.
-        </p>
-
-        <p>
-            개발자: BIMGO_Dev<br>
-            회사명: BIMGO<br>
-            이메일:
-            <a href="mailto:sandotori54@gmail.com">
-                sandotori54@gmail.com
-            </a>
-        </p>
-
+        <a class="back" id="btn-back" href="index.html">홈페이지로 돌아가기</a>
 
         <footer>
             © 2026 BIMGO. All rights reserved.
         </footer>
-
     </div>
 </div>
+
+<script>
+    const backBtnText = {
+        ko: "BIMGO! 홈페이지로 돌아가기",
+        en: "Back to BIMGO! Home",
+        jp: "BIMGO! ホームへ戻る"
+    };
+
+    function setLanguage(lang) {
+        if (!['ko', 'en', 'jp'].includes(lang)) lang = 'ko';
+
+        document.getElementById('content-ko').style.display = (lang === 'ko') ? 'block' : 'none';
+        document.getElementById('content-en').style.display = (lang === 'en') ? 'block' : 'none';
+        document.getElementById('content-jp').style.display = (lang === 'jp') ? 'block' : 'none';
+
+        document.getElementById('btn-back').textContent = backBtnText[lang];
+        document.getElementById('btn-back').href = `index.html?lang=${lang}`;
+
+        if (lang === 'jp') {
+            document.body.classList.add('lang-jp');
+            document.title = "プライバシーポリシー - BIMGO!";
+        } else if (lang === 'en') {
+            document.body.classList.remove('lang-jp');
+            document.title = "Privacy Policy - BIMGO!";
+        } else {
+            document.body.classList.remove('lang-jp');
+            document.title = "개인정보처리방침 - BIMGO!";
+        }
+
+        const buttons = document.querySelectorAll('.lang-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        if (lang === 'ko') buttons[0].classList.add('active');
+        else if (lang === 'en') buttons[1].classList.add('active');
+        else if (lang === 'jp') buttons[2].classList.add('active');
+
+        localStorage.setItem('bimgo_lang', lang);
+        document.documentElement.lang = lang;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const savedLang = urlParams.get('lang') || localStorage.getItem('bimgo_lang') || 'ko';
+        setLanguage(savedLang);
+    });
+</script>
 
 </body>
 </html>
